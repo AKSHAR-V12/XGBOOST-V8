@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: gym-muscle-growth-api
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    envVars:
+      - key: MODEL_PATH
+        value: "models/muscle_growth_model.pkl"
+      - key: FEATURES_PATH
+        value: "feature_names.json"
+      - key: USE_REDIS
+        value: "false"
+      - key: REDIS_URL
+        value: "redis://redis:6379/0"
+      - key: CORS_ALLOW_ORIGINS
+        value: "*"
+      - key: LOG_LEVEL
+        value: "INFO"
+      - key: MAX_WS_CONNS
+        value: "200"
+    routes:
+      - type: http
+        force_https: true

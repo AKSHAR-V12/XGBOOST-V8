@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    environment:
+      - USE_REDIS=false
+      - MODEL_PATH=models/muscle_growth_model.pkl
+      - FEATURES_PATH=feature_names.json
+      - WEBSOCKET_TICK=0.5
+      - LOG_LEVEL=INFO
+      - CORS_ALLOW_ORIGINS=*
+      - MAX_WS_CONNS=200
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

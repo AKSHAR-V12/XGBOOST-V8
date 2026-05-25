@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment
+.venv/
+env/
+venv/
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Ignore editor metadata
+.vscode/
+.idea/
+.DS_Store
